@@ -62,7 +62,10 @@ class LoginPage extends Component {
           <Link className="btn red" to="/index">
             </Link>
           <br/>
-          <button type="button" class="btn btn-danger">Sign Up</button>
+          <Link to="/signup">
+          <button type="button" class="btn btn-danger" to='/signup'>Sign Up</button>
+          </Link>
+          
         </form>
         </div>
       </main>
