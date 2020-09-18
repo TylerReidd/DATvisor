@@ -7,4 +7,4 @@ const indexSchema = new Schema ({
     myTrips: {type: [], ref: 'User'}
 });
 
-module.exports = mongoose.model('Index', indexPage)
+module.exports = mongoose.model('Index', indexSchema)
