@@ -4,9 +4,11 @@ import { Route, Redirect } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Landing from '../Landing/Landing'
+import Index from '../IndexPage/IndexPage'
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
+
 
 class App extends Component {
   state = {
@@ -65,6 +67,11 @@ class App extends Component {
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
         />
+        <Route 
+        exact
+        path="/index"
+        render={() => 
+        <Index /> } />
       </>
     );
   }
