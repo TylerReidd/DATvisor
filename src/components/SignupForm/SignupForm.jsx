@@ -38,6 +38,8 @@ class SignupForm extends Component {
   render() {
     const { name, email, password, passwordConf } = this.state;
     return (
+      <>
+      <h1>Welcome to DATvisor</h1>
       <div class="card">
       <div id="sign" class="card-body">
         <h3>Sign Up</h3>
@@ -93,6 +95,7 @@ class SignupForm extends Component {
         </form>
       </div>
     </div>
+    </>
     );
   }
 }
