@@ -5,3 +5,8 @@
   align-items: center;
   margin-bottom: 50px;
 }
+
+#sign {
+  display: flex;
+  flex-flow: wrap;
+}

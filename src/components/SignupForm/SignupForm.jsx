@@ -38,7 +38,9 @@ class SignupForm extends Component {
   render() {
     const { name, email, password, passwordConf } = this.state;
     return (
-      <div>
+      <div class="card">
+
+      <div id="sign" class="card-body">
         <h3>Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <input
@@ -48,7 +50,7 @@ class SignupForm extends Component {
             value={name}
             name="name"
             onChange={this.handleChange}
-          />
+            />
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -57,7 +59,7 @@ class SignupForm extends Component {
             value={email}
             name="email"
             onChange={this.handleChange}
-          />
+            />
           <label htmlFor="email">Email</label>
           <input
             type="password"
@@ -66,7 +68,7 @@ class SignupForm extends Component {
             value={password}
             name="password"
             onChange={this.handleChange}
-          />
+            />
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -75,13 +77,14 @@ class SignupForm extends Component {
             value={passwordConf}
             name="passwordConf"
             onChange={this.handleChange}
-          />
+            />
           <label htmlFor="confirm">Confirm Password</label>
           <button disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
           <Link to="/">Cancel</Link>
         </form>
       </div>
+    </div>
     );
   }
 }
