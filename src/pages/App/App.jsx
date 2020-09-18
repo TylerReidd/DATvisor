@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+import Landing from '../Landing/Landing'
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
@@ -29,9 +30,13 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => (
+          render={({history}) => (
             <main>
-              <h1>Welcome. This is an authorization template.</h1>
+              <Landing />
+            <Login
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
             </main>
           )}
         />
