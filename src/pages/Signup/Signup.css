@@ -6,7 +6,8 @@
   margin-bottom: 50px;
 }
 
-#sign {
-  display: flex;
-  flex-flow: wrap;
+.card {
+  width: 18rem;
+  margin: auto;
 }
+
