@@ -22,7 +22,7 @@ class LoginPage extends Component {
       await authService.login(this.state);
       // Let <App> know a user has signed up!
       handleSignupOrLogin();
-      history.push("/");
+      history.push("/index");
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
@@ -38,7 +38,7 @@ class LoginPage extends Component {
         <form autoComplete="off" onSubmit={this.handleSubmit}>
         <label className="text" htmlFor="email">Email</label>
         <br/>
-          <input classNam="email"
+          <input className="email"
             type="text"
             autoComplete="off"
             id="email"
