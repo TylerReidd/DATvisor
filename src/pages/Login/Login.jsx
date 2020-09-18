@@ -33,7 +33,7 @@ class LoginPage extends Component {
     const {email, pw} = this.state
     return (
       <main >
-        <div className="container">
+        <div className="card">
         <h3>Log In or Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
         <label className="text" htmlFor="email">Email</label>
