@@ -39,6 +39,7 @@ class App extends Component {
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
+            
             </main>
           )}
         />
