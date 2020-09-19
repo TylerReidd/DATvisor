@@ -10,6 +10,7 @@ require('./config/database');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const indexRouter = require('./routes/indexPage')
+const preArrivalRouter = require('./routes/preArrival')
 
 const cors = require('cors')
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/auth', authRouter);
 app.use('/api/users', userRouter);
 app.use('/index', indexRouter);
+app.use('/preArrival', preArrivalRouter);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
