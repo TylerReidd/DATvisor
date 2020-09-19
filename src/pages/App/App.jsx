@@ -10,6 +10,9 @@ import Users from "../Users/Users";
 import PreArrivalList from '../PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
 import * as preArrivalAPI from '../../services/pre-api'
+import PostList from '../PostArrivalList/PostArrivalPage.jsx'
+import AddPostList from '../AddPostPage/AddPostPage'
+import * as PostArrivalAPI from '../../services/post-api'
 import "./App.css";
 
 
@@ -35,6 +38,14 @@ class App extends Component {
       preArrivals: [...state.preArrivals, newPreArrival]
     }), () => this.props.history.push('/preArrival')) 
   }
+
+  handleAddPost = async newPostData => {
+    const newPost = await PostArrivalAPI.create(newPostData);
+    this.setState(state => ({
+      postArrivals: [...state.postArrivals, newPost]
+    }), () => this.props.history.push('/post')) 
+  }
+
 
   render() {
     const {user} = this.state
@@ -85,6 +96,7 @@ class App extends Component {
           path="/index"
           render={() => 
             <Index /> } />
+
         <Route 
           exact
           path="/preArrival"
@@ -103,6 +115,27 @@ class App extends Component {
                 :
                 <Redirect to='/login' />
           } />
+          <Route 
+              exact
+              path="/post"
+              render={() => 
+                <PostList 
+                postArrivals={this.state.postArrivals}
+                /> 
+              } />
+
+        <Route
+            exact
+            path="/postToDo"
+            render={() =>
+              authService.getUser() ?
+              <AddPostList
+              handleAddPost={this.handleAddPost}
+              />
+              :
+              <Redirect to="/login" />
+        }/>
+
       </>
     );
   }
