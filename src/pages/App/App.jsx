@@ -10,7 +10,7 @@ import Users from "../Users/Users";
 import PreArrivalList from '../PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
 import * as preArrivalAPI from '../../services/pre-api'
-import PostList from '../PostArrivalList/PostArrivalPage'
+import PostList from '../PostArrivalList/PostArrivalPage.jsx'
 import AddPostList from '../AddPostPage/AddPostPage'
 import * as PostArrivalAPI from '../../services/post-api'
 import "./App.css";
