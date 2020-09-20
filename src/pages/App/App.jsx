@@ -13,6 +13,7 @@ import * as preArrivalAPI from '../../services/pre-api'
 import PostList from '../PostArrivalList/PostArrivalPage.jsx'
 import AddPostList from '../AddPostPage/AddPostPage'
 import * as PostArrivalAPI from '../../services/post-api'
+import EditPreArrival from '../EditPreArrival/EditPreArrival'
 import "./App.css";
 
 
@@ -45,6 +46,34 @@ class App extends Component {
       postArrivals: [...state.postArrivals, newPost]
     }), () => this.props.history.push('/post')) 
   }
+
+  
+  handleUpdatePreArrival = async updatedPreData => {
+    const updatedPreArrival = await preArrivalAPI.update(updatedPreData);
+    const newPreArrivalsArray = this.state.preArrivals.map(pre => 
+      pre._id === updatedPreArrival._id ? updatedPreArrival : pre
+      );
+      this.setState(
+        {preArrivals: newPreArrivalsArray},
+        () => this.props.history.push('/preArrival')
+        );
+      }
+
+  handleDeletePreArrival = async id => {
+    if(authService.getUser()){
+      await preArrivalAPI.deleteOne(id);
+      this.setState(state => ({
+        preArrivals: state.preArrivals.filter(pre => pre._id !== id)
+      }), () => this.props.history.push('/preArrival'));
+    } else {
+      this.props.history.push('/login')
+    }
+  }
+
+  // async componentDidMount() {
+  //   const preArrivals = await preArrivalAPI.getAll();
+  //   this.setState({ preArrivals })
+  // }
 
 
   render() {
@@ -96,13 +125,14 @@ class App extends Component {
           path="/index"
           render={() => 
             <Index /> } />
-
         <Route 
           exact
           path="/preArrival"
           render={() =>
             <PreArrivalList 
               preArrivals={this.state.preArrivals}
+              user={this.state.user}
+              handleDeletePreArrival={this.handleDeletePreArrival}
         /> } />
         <Route
           exact
@@ -135,7 +165,17 @@ class App extends Component {
               :
               <Redirect to="/login" />
         }/>
-
+        <Route 
+        exact path='/edit' render={({location}) =>
+        authService.getUser() ?
+          <EditPreArrival 
+            handleUpdatePreArrival={this.handleUpdatePreArrival}
+            location={location}
+            user={this.state.user}
+          />
+          :
+          <Redirect to='/login' />
+        }/>
       </>
     );
   }

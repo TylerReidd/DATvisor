@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const preSchema = new Schema ({
-    toDo: [String],
+    toDo: {type: [String]},
     time: Date,
     done: Boolean
 }, {timestamps: true})

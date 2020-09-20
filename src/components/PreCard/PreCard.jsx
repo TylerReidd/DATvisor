@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PreCard({ user, preArrival, handleDeletePreArrival }) {
+function PreCard({ preArrival, handleDeletePreArrival }) {
     return (
         <>
             <div className="card">
@@ -11,10 +11,22 @@ function PreCard({ user, preArrival, handleDeletePreArrival }) {
                     <li>{preArrival.toDo}</li>
                 </ul>
                 </div>
-            </div>
             <>
-            
-            </>
+            <button type="submit" className="btn btn-danger" onClick={() => handleDeletePreArrival(preArrival._id)}>
+                    Delete
+                </button>
+                <Link 
+                    className="btn yellow black-text"
+                    to={{
+                        pathname: '/edit',
+                        state: {preArrival}
+                    }}
+                    >
+                        Edit
+                    </Link>
+                 </>
+                
+            </div>
         </>
     )
 }
