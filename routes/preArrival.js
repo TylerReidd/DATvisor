@@ -7,6 +7,8 @@ const preCtrl = require('../controllers/preArrival');
 router.use(require('../config/auth'));
 router.get('/', checkAuth, preCtrl.index);
 router.post('/', checkAuth, preCtrl.create);
+router.delete('/:id', checkAuth, preCtrl.delete);
+router.put('/:id', checkAuth, preCtrl.update);
 
 function checkAuth(req, res, next) {
     if (req.user) return next();

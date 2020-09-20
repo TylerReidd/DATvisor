@@ -17,7 +17,7 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
         <Link 
         className="btn yellow black-text"
         to={{
-            pathname: '/edit',
+            pathname: '/editPost',
             state: {postArrival}
         }}>
         Edit Activity

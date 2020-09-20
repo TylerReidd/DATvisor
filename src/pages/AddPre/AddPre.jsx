@@ -3,8 +3,9 @@ import './AddPre.css';
 
 class AddPre extends Component {
     state = { 
+        invalidForm: true,
         formData: {
-            toDo: []
+            toDo: ['']
         }
     }
 
@@ -16,7 +17,8 @@ class AddPre extends Component {
     handleChange = e => {
         const formData = {...this.state.formData, [e.target.name]: e.target.value};
         this.setState({
-        formData
+        formData,
+        invalidForm: !this.formRef.current.checkValidity()
         });
      }
 
