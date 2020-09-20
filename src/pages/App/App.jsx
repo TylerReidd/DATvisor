@@ -14,6 +14,7 @@ import PostList from '../PostArrivalList/PostArrivalPage.jsx'
 import AddPostList from '../AddPostPage/AddPostPage'
 import * as PostArrivalAPI from '../../services/post-api'
 import EditPreArrival from '../EditPreArrival/EditPreArrival'
+import EditPost from '../EditPost/EditPost'
 import "./App.css";
 
 
@@ -69,6 +70,30 @@ class App extends Component {
       this.props.history.push('/login')
     }
   }
+
+  handleUpdateToDo = async updatedPostData => {
+    const updatedPost = await PostArrivalAPI.update(updatedPostData);
+    const newPostArray = this.state.postArrivals.map(t =>
+      t._id === updatedPost._id ? updatedPost : t
+    );
+    this.setState(
+      { postArrivals: newPostArray },
+      () => this.props.history.push('/post')
+    );
+  }
+
+  handleDeletePostArrival = async id => {
+    if(authService.getUser()) {
+      await PostArrivalAPI.deleteOne(id);
+      this.setState(state => ({
+        postArrivals: state.postArrivals.filter(a => a._id !== id)
+      }), () => this.props.history.push('/post'))
+    } else {
+      this.props.history.push('/login')
+    }
+  }
+
+ 
 
   // async componentDidMount() {
   //   const preArrivals = await preArrivalAPI.getAll();
