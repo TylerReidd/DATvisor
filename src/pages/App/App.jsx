@@ -151,6 +151,8 @@ class App extends Component {
               render={() => 
                 <PostList 
                 postArrivals={this.state.postArrivals}
+                user={this.state.user}
+                handleDeletePostArrival={this.handleDeletePostArrival}
                 /> 
               } />
 
@@ -165,6 +167,24 @@ class App extends Component {
               :
               <Redirect to="/login" />
         }/>
+
+
+          <Route
+          exact path='/editPost' render={({ location }) =>
+            authService.getUser() ?
+              <EditPost
+                handleUpdateToDo={this.handleUpdateToDo}
+                location={location}
+                user={this.state.user}
+              />
+              :
+              <Redirect to='/login' />
+          } />
+
+
+
+
+
         <Route 
         exact path='/edit' render={({location}) =>
         authService.getUser() ?
