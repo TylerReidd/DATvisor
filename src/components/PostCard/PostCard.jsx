@@ -9,8 +9,7 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
             <h2>Post Arrival Itinerary</h2>
             <ul>
                 <li>{postArrival.toDo}</li>
-                <li>{postArrival.activity}</li>
-                <li>{postArrival.time}</li>
+
             </ul>
         </div>
         <>
@@ -20,8 +19,13 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
             pathname: '/editPost',
             state: {postArrival}
         }}>
-        Edit Activity
+        <button type="submit" className="btn btn-warning">Edit Activity</button>
         </Link>
+        </>
+        <>
+        <button type="submit" className="btn btn-danger" onClick={() => handleDeletePostArrival(postArrival._id)}>
+            Delete 
+        </button>
         </>
         </>
     )

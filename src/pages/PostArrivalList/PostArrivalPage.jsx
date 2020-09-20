@@ -7,11 +7,13 @@ const PostList = (props) => {
     return(
         <> 
         <h1>Post-Arrival Itinerary</h1>
-        <div className="PostArrivalList-grid">
+        <div>
             {props.postArrivals.map(postArrival =>
                 <PostCard
                 key={postArrival._id}
                 postArrival={postArrival}
+                handleDeletePostArrival={props.handleDeletePostArrival}
+                user={props.user}
                 />
                 )}
         </div>
@@ -20,10 +22,8 @@ const PostList = (props) => {
             pathname: '/postToDo',
             state: {}
         }}>
-        
         <button type="button" class="btn btn-success">ADD Activity</button>
         </Link>
-      
         </>
     )
 }
