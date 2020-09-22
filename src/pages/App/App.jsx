@@ -72,8 +72,9 @@ class App extends Component {
 
   async componentDidMount() {
     const preArrivals = await preArrivalAPI.getAll();
+    const postArrivals = await PostArrivalAPI.getAll();
     console.log(preArrivals)
-    this.setState({ preArrivals })
+    this.setState({ preArrivals, postArrivals })
   }
 
 
@@ -166,6 +167,20 @@ class App extends Component {
               :
               <Redirect to="/login" />
         }/>
+        
+         <Route
+          exact path='/editPost' render={({ location }) =>
+            authService.getUser() ?
+              <EditPost
+                handleUpdateToDo={this.handleUpdateToDo}
+                location={location}
+                user={this.state.user}
+              />
+              :
+              <Redirect to='/login' />
+          } />
+
+
         <Route 
         exact path='/edit' render={({location}) =>
         authService.getUser() ?
