@@ -1,5 +1,5 @@
 import tokenService from '../services/tokenService';
-const BASE_URL = '/preArrival/';
+const BASE_URL = 'api/preArrival/';
 
 export function create(preArrival) {
     return fetch(BASE_URL, {
