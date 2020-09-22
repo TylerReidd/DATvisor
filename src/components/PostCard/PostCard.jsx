@@ -1,16 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import './PostCard.css'
 
 function PostCard({ user, postArrival, handleDeletePostArrival}) {
     return (
         <>
-        <div className="card">
-            <h2>Post Arrival Itinerary</h2>
-            <ul>
-                <li>{postArrival.toDo}</li>
-
-            </ul>
+        <div>
+            <div>
+                <li>{postArrival.toDo}</li>            
+            </div>
         </div>
         <>
         <Link 
@@ -19,11 +17,11 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
             pathname: '/editPost',
             state: {postArrival}
         }}>
-        <button type="submit" className="btn btn-warning">Edit Activity</button>
+        <button type="submit" className="btn btn-warning btn-sm">Edit Activity</button>
         </Link>
         </>
         <>
-        <button type="submit" className="btn btn-danger" onClick={() => handleDeletePostArrival(postArrival._id)}>
+        <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeletePostArrival(postArrival._id)}>
             Delete 
         </button>
         </>
