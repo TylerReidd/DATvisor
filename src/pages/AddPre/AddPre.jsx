@@ -5,7 +5,7 @@ class AddPre extends Component {
     state = { 
         invalidForm: true,
         formData: {
-            toDo: ['']
+            toDo: []
         }
     }
 
