@@ -27,11 +27,14 @@ const PostList = (props) => {
             }
         }}>
             <br/>
-            <br/>
+            
 
         <button type="button" className="btn btn-success btn-med">ADD Activity</button>
         </Link>
         </div>
+                <div>
+                    <img id="dat" src="https://i.imgur.com/CkrPkVr.png" alt=""/>
+                </div>
 
             
         </>

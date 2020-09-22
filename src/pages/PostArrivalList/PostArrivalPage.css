@@ -2,4 +2,9 @@ body {
     text-align: center;
     background-color: #43c3ff;
     font-family: 'Delius', cursive;
+
+}
+
+#dat {
+    width: 200px;
 }

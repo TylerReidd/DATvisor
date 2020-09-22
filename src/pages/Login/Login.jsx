@@ -33,7 +33,7 @@ class LoginPage extends Component {
     const {email, pw} = this.state
     return (
       <main >
-        <div className="card">
+        <div>
         <h3>Log In or Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
         <label className="text" htmlFor="email">Email</label>
@@ -59,9 +59,10 @@ class LoginPage extends Component {
           />
           <br/>
           <button className="btn btn-success">Log In</button>
-          <Link className="btn red" to="/index">
+          <Link to="/index">
             </Link>
           <br/>
+          <br></br>
           <Link to="/signup">
           <button type="button" class="btn btn-danger" to='/signup'>Sign Up</button>
           </Link>
