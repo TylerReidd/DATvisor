@@ -7,6 +7,9 @@ import './PostArrivalPage.css'
 const PostList = (props) => {
     return(
         <> 
+                <div>
+                    <img id="dat" src="https://i.imgur.com/CkrPkVr.png" alt=""/>
+                </div>
         <h1>Post-Arrival Itinerary</h1>
         <div className='container'>
         <div>
@@ -32,9 +35,6 @@ const PostList = (props) => {
         <button type="button" className="btn btn-success btn-med">ADD Activity</button>
         </Link>
         </div>
-                <div>
-                    <img id="dat" src="https://i.imgur.com/CkrPkVr.png" alt=""/>
-                </div>
 
             
         </>
