@@ -11,6 +11,10 @@ function Index () {
             >
                 <button>Pre</button>
             </Link>
+            <Link
+            to='/post'>
+                Button
+            </Link>
          </> 
         
     )
