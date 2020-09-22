@@ -32,7 +32,8 @@ class LoginPage extends Component {
   render() {
     const {email, pw} = this.state
     return (
-      <main >
+      <main>
+         <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
         <div>
         <h3>Log In or Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
