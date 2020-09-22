@@ -12,6 +12,7 @@ const authRouter = require('./routes/auth');
 const indexRouter = require('./routes/indexPage')
 const preArrivalRouter = require('./routes/preArrival')
 const postRouter = require('./routes/postPage')
+const locationIDRouter = require('./routes/locationID')
 
 const cors = require('cors')
 
@@ -28,6 +29,7 @@ app.use('/api/users', userRouter);
 app.use('/index', indexRouter);
 app.use('/preArrival', preArrivalRouter);
 app.use('/post', postRouter)
+app.use('/api/locationID', locationIDRouter)
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
