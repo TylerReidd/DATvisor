@@ -5,14 +5,14 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Landing from '../Landing/Landing'
 import Index from '../IndexPage/IndexPage'
-import authService from "../../../../services/authService";
+import authService from "../../services/authService";
 import Users from "../Users/Users";
 import PreArrivalList from '../PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
-import * as preArrivalAPI from '../../../../services/pre-api'
+import * as preArrivalAPI from '../../services/pre-api'
 import PostList from '../PostArrivalList/PostArrivalPage.jsx'
 import AddPostList from '../AddPostPage/AddPostPage'
-import * as PostArrivalAPI from '../../../../services/post-api'
+import * as PostArrivalAPI from '../../services/post-api'
 import EditPreArrival from '../EditPreArrival/EditPreArrival'
 import EditPost from '../EditPost/EditPost'
 import "./App.css";
