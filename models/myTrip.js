@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const locationSchema = new Schema ({
+    name: String,
+    id: String,
+    description: String 
+})
 
+const myTripSchema = new Schema ({
+    location: {type: locationSchema},
+    Date: Number
+})
 
-
-const postSchema = new Schema ({
-    activity: {type: []},
-    toDo: [],
-    time: Date,
-    done: Boolean,
-    myTrip: {type: Schema.Types.ObjectId, ref: 'MyTrip'}
-}, {timestamps: true})
-
-module.exports = mongoose.model('PostArrival', postSchema)
+module.exports = mongoose.model('MyTrip', myTripSchema, locationSchema)
