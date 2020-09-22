@@ -12,8 +12,6 @@ const PreArrivalList = (props) => {
                 <PreCard
                     key={preArrival._id}
                     preArrival={preArrival}
-                    handleDeletePreArrival={props.handleDeletePreArrival}
-                    user={props.user}
                     />
                     )}
             </div>
