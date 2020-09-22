@@ -1,34 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PreCard({ preArrival, handleDeletePreArrival }) {
+function PreCard({ user, preArrival, handleDeletePreArrival}) {
     return (
         <>
-            <div className="card">
-                <div class="card-body">
-                <h2>Pre Arrival Itinerary</h2>
-                <ul>
-                    <li>{preArrival.toDo}</li>
-                </ul>
-                </div>
-            <>
-            <button type="submit" className="btn btn-danger" onClick={() => handleDeletePreArrival(preArrival._id)}>
-                    Delete
-                </button>
-                <Link 
-                    className="btn yellow black-text"
-                    to={{
-                        pathname: '/edit',
-                        state: {preArrival}
-                    }}
-                    >
-                        Edit
-                    </Link>
-                 </>
-                
+        <div>
+            <div>
+                <li>{preArrival.toDo}</li>
             </div>
+        </div>
+        <>
+        <Link 
+        className="btn yellow black-text"
+        to={{
+            pathname: '/edit',
+            state: {preArrival}
+        }}>
+        <button type="submit" className="btn btn-warning btn-sm">Edit</button>
+        </Link>
+        </>
+        <>
+        <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeletePreArrival(preArrival._id)}>
+            Delete 
+        </button>
+        </>
         </>
     )
 }
-
 export default PreCard;
