@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PreCard from '../../components/PreCard/PreCard';
+import PreCard from '../../../PreCard/PreCard';
 import './PreArrivalList.css';
 
 
