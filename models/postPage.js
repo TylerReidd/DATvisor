@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 
 const postSchema = new Schema ({
-    activity: {type: [String]},
-    toDo: [String],
+    activity: {type: []},
+    toDo: [],
     time: Date,
     done: Boolean,
 }, {timestamps: true})
