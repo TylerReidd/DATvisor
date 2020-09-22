@@ -3,28 +3,34 @@ import { Link } from 'react-router-dom';
 import PreCard from '../../components/PreCard/PreCard';
 import './PreArrivalList.css';
 
-const PreArrivalList = (props) => {
-    return (
-        <>
-            <h1>Pre-Arrival List</h1>
-            <div className='PreArrivalList-grid'>
-                {props.preArrivals.map(preArrival => 
-                <PreCard
-                    key={preArrival._id}
-                    preArrival={preArrival}
-                    />
-                    )}
-            </div>
-            <Link
-            to={{
-                pathname: '/addPreArrival',
-                state: {}
-            }}>
 
-                <button type="button" class="btn btn-success">Add Pre-Arrival Itinerary</button>
-            </Link>
+const PreArrivalList = (props) => {
+    return(
+        <> 
+        <h1>Pre-Arrival Itinerary</h1>
+        <div className='container'>
+        <div>
+            {props.preArrivals.map(preArrival =>
+                <PreCard
+                key={preArrival._id}
+                preArrival={preArrival}
+                handleDeletePreArrival={props.handleDeletePreArrival}
+                user={props.user}
+                />
+                )}
+        </div>
+        <Link
+        to={{
+            pathname: '/addPreArrival',
+            state: {
+                preArrivals: []
+            }
+        }}>
+        <button type="button" className="btn btn-success">Add Task</button>
+        </Link>
+        </div>
         </>
     )
 }
- 
-export default PreArrivalList;
+
+export default PreArrivalList
