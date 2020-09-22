@@ -181,7 +181,7 @@ class App extends Component {
                 <PostList 
                 postArrivals={this.state.postArrivals}
                 user={this.state.user}
-        handleDeletePostArrival={this.handleDeletePostArrival}
+                handleDeletePostArrival={this.handleDeletePostArrival}
                 /> 
               } />
 
