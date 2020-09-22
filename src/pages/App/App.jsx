@@ -145,11 +145,13 @@ class App extends Component {
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
         />
+
         <Route 
           exact
           path="/index"
           render={() => 
             <Index /> } />
+
         <Route 
           exact
           path="/preArrival"
@@ -159,6 +161,7 @@ class App extends Component {
               user={this.state.user}
               handleDeletePreArrival={this.handleDeletePreArrival}
         /> } />
+
         <Route
           exact
           path="/addPreArrival"
@@ -170,12 +173,15 @@ class App extends Component {
                 :
                 <Redirect to='/login' />
           } />
+
           <Route 
               exact
               path="/post"
               render={() => 
                 <PostList 
                 postArrivals={this.state.postArrivals}
+                user={this.state.user}
+        handleDeletePostArrival={this.handleDeletePostArrival}
                 /> 
               } />
 
