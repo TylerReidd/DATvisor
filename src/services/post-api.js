@@ -34,3 +34,6 @@ export function update(postArrival) {
     }, {mode: "cors"})
     .then(res => res.json());
   }
+
+
+  
