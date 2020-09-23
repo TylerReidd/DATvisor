@@ -3,3 +3,7 @@ li {
     font-size: xx-large;
     ;
 }
+
+button:hover {
+    animation: animate__flash;
+}
