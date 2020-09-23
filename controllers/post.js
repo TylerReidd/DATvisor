@@ -9,6 +9,7 @@ module.exports = {
 }
 
 function create(req,res) {
+    req.body.addedBy = req.user._id
     req.body.toDo = req.body.toDo.split(',');
     PostArrival.create(req.body)
     .then(post => {res.json(post)})
@@ -16,7 +17,7 @@ function create(req,res) {
 }
 
 function index(req,res) {
-    PostArrival.find({})
+    PostArrival.find({addedBy: req.user._id})
     .populate('')
     .then(post => {res.json(post)})
     .catch(err => {res.json(err)})

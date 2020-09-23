@@ -7,7 +7,7 @@ import Landing from '../Landing/Landing'
 import Index from '../IndexPage/IndexPage'
 import authService from "../../services/authService";
 import Users from "../Users/Users";
-import PreArrivalList from '../PreArrivalList/PreArrivalList';
+import PreArrivalList from '../../components/PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
 import * as preArrivalAPI from '../../services/pre-api'
 import PostList from '../PostArrivalList/PostArrivalPage.jsx'
