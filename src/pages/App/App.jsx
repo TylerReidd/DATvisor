@@ -36,6 +36,7 @@ class App extends Component {
 
   handleAddPre = async newPreData => {
     const newPreArrival = await preArrivalAPI.create(newPreData);
+    newPreArrival.addedBy = {name: this.state.user.name, _id: this.state.user._id}
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
     }), () => this.props.history.push('/preArrival')) 

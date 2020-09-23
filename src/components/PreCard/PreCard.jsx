@@ -55,7 +55,7 @@ function PreCard({ user, preArrival, handleDeletePreArrival}) {
                         </button>
             </>
             :
-            ''
+            'Not Yours'
         }
         </>
     )
