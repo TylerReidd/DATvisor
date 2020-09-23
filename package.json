@@ -6,7 +6,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+<<<<<<< HEAD
+=======
     "animate.css": "^4.1.1",
+>>>>>>> 1cdac433548b013eb205ea8044b065a58045547a
     "axios": "^0.20.0",
     "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
