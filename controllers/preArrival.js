@@ -8,6 +8,7 @@ module.exports = {
 };
 
 function create(req, res) {
+    req.body.addedBy = req.user._id
     req.body.toDo = req.body.toDo.split(',')
     PreArrival.create(req.body)
     .then(preArrival => {res.json(preArrival)})
@@ -15,7 +16,8 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    PreArrival.find({})
+  console.log(req.user._id)
+    PreArrival.find({addedBy: req.user._id})
     .populate('addedBy')
     .then((pre) => res.json(pre))
     .catch(err => {res.json(err)})

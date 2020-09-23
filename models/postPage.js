@@ -7,6 +7,7 @@ const postSchema = new Schema ({
     toDo: [],
     time: Date,
     done: Boolean,
+    myTrip: {type: Schema.Types.ObjectId, ref: 'MyTrip'}
 }, {timestamps: true})
 
 module.exports = mongoose.model('PostArrival', postSchema)

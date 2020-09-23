@@ -1,5 +1,5 @@
 import tokenService from '../services/tokenService';
-const BASE_URL = '/post/';
+const BASE_URL = '/api/post/';
 
 
 

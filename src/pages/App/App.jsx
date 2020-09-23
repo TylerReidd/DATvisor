@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
-// import NavBar from "../../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Landing from '../Landing/Landing'
@@ -27,7 +27,7 @@ class App extends Component {
 
   handleLogout = () => {
     authService.logout();
-    this.setState({ user: null });
+    this.setState({ user: [] });
   };
 
   handleSignupOrLogin = () => {
@@ -36,6 +36,7 @@ class App extends Component {
 
   handleAddPre = async newPreData => {
     const newPreArrival = await preArrivalAPI.create(newPreData);
+    newPreArrival.addedBy = {name: this.state.user.name, _id: this.state.user._id}
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
     }), () => this.props.history.push('/preArrival')) 
@@ -105,7 +106,9 @@ class App extends Component {
     const {user} = this.state
     return (
       <>
-        {/* <NavBar user={user} handleLogout={this.handleLogout} /> */}
+        <NavBar user={user} 
+        handleLogout={this.handleLogout} 
+        />
         <Route
           exact
           path="/"

@@ -27,8 +27,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/auth', authRouter);
 app.use('/api/users', userRouter);
 app.use('/index', indexRouter);
-app.use('/preArrival', preArrivalRouter);
-app.use('/post', postRouter)
+app.use('/api/preArrival', preArrivalRouter);
+app.use('/api/post', postRouter)
 app.use('/api/locationID', locationIDRouter)
 
 app.get('/*', function(req, res) {
