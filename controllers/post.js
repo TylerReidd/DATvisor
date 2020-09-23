@@ -1,6 +1,5 @@
 const PostArrival = require("../models/postPage");
 
-
 module.exports = {
     index,
     create,
@@ -12,7 +11,7 @@ function create(req,res) {
     req.body.addedBy = req.user._id
     req.body.toDo = req.body.toDo.split(',');
     PostArrival.create(req.body)
-    .then(post => {res.json(post)})
+    .then(postArrival => {res.json(postArrival)})
     .catch(err => {res.json(err)})
 }
 

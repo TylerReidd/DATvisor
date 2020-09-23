@@ -8,7 +8,6 @@ class EditPost extends Component {
         formData: this.props.location.state.postArrival,
     };
     
-
     formRef = React.createRef();
 
     handleSubmit = e => {
@@ -24,13 +23,10 @@ class EditPost extends Component {
         });
     };
 
-
-
-
     render() {
         return (
             <>
-            <h1>Hell yeah</h1>
+            <h1>Tasks to Complete Upon Arrival</h1>
             <div className="EditToDo">
                 <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                     <div className="row">
@@ -39,13 +35,6 @@ class EditPost extends Component {
                         <input type="text" id='toDo' name="toDo"  className="active" value={this.state.formData.toDo} onChange={this.handleChange} required/>
                         </div>
                     </div>
-                    {/* <div className="row">
-                        <div className="input-field col s12">
-                            <label className="active" htmlFor="time">Time</label>
-                            <input name="time" id="type" type="text" className="active" value={this.state.formData.name} onChange={this.handleChange}/>
-                        </div>
-                    </div> */}
-
                     <button
                         type="submit"
                         className="btn btn-success"

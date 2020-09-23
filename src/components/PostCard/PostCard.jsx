@@ -5,12 +5,14 @@ import './PostCard.css'
 function PostCard({ user, postArrival, handleDeletePostArrival}) {
     return (
         <>
+        {user._id ?   
+        <>
         <div>
             <div>
                 <li>{postArrival.toDo}</li>            
             </div>
         </div>
-        <>
+       
         <Link 
         className="btn yellow black-text"
         to={{
@@ -19,12 +21,14 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
         }}>
         <button type="submit" className="btn btn-warning btn-sm">Edit Activity</button>
         </Link>
-        </>
-        <>
+        
         <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeletePostArrival(postArrival._id)}>
             Delete 
         </button>
         </>
+        :
+        'Not Yours'
+    }
         </>
     )
 }
