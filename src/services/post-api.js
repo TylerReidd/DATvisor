@@ -1,9 +1,6 @@
 import tokenService from '../services/tokenService';
 const BASE_URL = '/api/post/';
 
-
-
-
 export function getAll() {
     return fetch(BASE_URL, {
         method: "GET",
