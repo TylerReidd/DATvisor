@@ -16,9 +16,8 @@ function create(req,res) {
 }
 
 function index(req,res) {
-    console.log(req.user._id)
     PostArrival.find({addedBy: req.user._id})
-    .populate('addedBy')
+    .populate('')
     .then(post => {res.json(post)})
     .catch(err => {res.json(err)})
 }

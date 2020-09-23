@@ -7,10 +7,10 @@ import Landing from '../Landing/Landing'
 import Index from '../IndexPage/IndexPage'
 import authService from "../../services/authService";
 import Users from "../Users/Users";
-import PreArrivalList from '../PreArrivalList/PreArrivalList';
+import PreArrivalList from '../../components/PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
 import * as preArrivalAPI from '../../services/pre-api'
-import PostList from '../PostArrivalList/PostArrivalPage.jsx'
+import PostArrivalList from '../../components/PostArrivalList/PostArrivalList'
 import AddPostList from '../AddPostPage/AddPostPage'
 import * as PostArrivalAPI from '../../services/post-api'
 import EditPreArrival from '../EditPreArrival/EditPreArrival'
@@ -181,7 +181,7 @@ class App extends Component {
               exact
               path="/post"
               render={() => 
-                <PostList 
+                <PostArrivalList 
                 postArrivals={this.state.postArrivals}
                 user={this.state.user}
         handleDeletePostArrival={this.handleDeletePostArrival}
@@ -211,7 +211,6 @@ class App extends Component {
               :
               <Redirect to='/login' />
           } />
-
 
         <Route 
         exact path='/edit' render={({location}) =>

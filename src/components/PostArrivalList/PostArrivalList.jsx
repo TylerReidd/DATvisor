@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PostCard from '../../components/PostCard/PostCard'
-import './PostArrivalPage.css'
+import PostCard from '../PostCard/PostCard'
+import './PostArrivalList.css'
 
 
-const PostList = (props) => {
+const PostArrivalList = (props) => {
     return(
         <> 
         <h1>Post-Arrival Itinerary</h1>
@@ -33,4 +33,4 @@ const PostList = (props) => {
         </>
     )
 }
-export default PostList
+export default PostArrivalList
