@@ -18,7 +18,7 @@ import ItineraryPage from "../ItineraryPage/ItineraryPage";
 import MyTripsPage from "../MyTrips/MyTrips";
 import AddTrip from '../AddTrip/AddTrip';
 import * as MyTripAPI from '../../services/myTrip-api';
-import PostArrivalList from "../../components/PostArrivalList/PostArrivalList";
+
 
 
 class App extends Component {
@@ -110,7 +110,7 @@ class App extends Component {
     const preArrivals = await PreArrivalAPI.getAll();
     const postArrivals = await PostArrivalAPI.getAll();
     const myTrips = await MyTripAPI.getAll();
-    console.log(preArrivals)
+    console.log(myTrips)
     this.setState({ preArrivals, postArrivals, myTrips })
   }
 
@@ -241,6 +241,8 @@ class App extends Component {
         path='/my-trips' render={() =>
         authService.getUser() ?
         <MyTripsPage
+        myTrips={this.state.myTrips}
+        user={this.state.user}
         />
         :
         <Redirect to='/' />

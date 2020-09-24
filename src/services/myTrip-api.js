@@ -1,4 +1,4 @@
-import tokenService from './tokenService';
+import tokenService from '../services/tokenService';
 const BASE_URL = '/api/myTrip/';
 
 export function create(myTrip) {

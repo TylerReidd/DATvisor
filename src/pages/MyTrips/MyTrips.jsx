@@ -1,6 +1,7 @@
 import React from 'react';
 import './MyTrips.css'
 import { Link } from 'react-router-dom'
+import TripCard from '../../components/TripCard/TripCard'
 
 const MyTripsPage = (props) => {
     return ( 
@@ -9,10 +10,32 @@ const MyTripsPage = (props) => {
         <Link to=
         {{pathname: "/add-trip",
         state: {
-            myTrips: []
+            myTrips: [],
         }
             }}> <button>Add A Trip</button> </Link>
-        <table>
+
+            <div className='container'>
+                <div>
+            {props.myTrips.map(myTrip =>
+                <TripCard
+                key={myTrip._id}
+                myTrip={myTrip}
+                handleDeleteMyTrip={props.handleDeleteMyTrip}
+                user={props.user}
+                />
+                )}
+        </div>
+        <Link
+        to={{
+            pathname: '/add-trip',
+            state: {
+                myTrips: []
+            }
+        }}>
+        <button type="button" className="btn btn-success">Add Task</button>
+        </Link>
+        </div>
+        {/* <table>
             <thead>
                 <tr>
                     <th>Trip Name</th>
@@ -22,7 +45,7 @@ const MyTripsPage = (props) => {
                 </tr>
             </thead>
             
-        </table>
+        </table> */}
 
         </>
      );
