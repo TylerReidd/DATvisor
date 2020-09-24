@@ -16,6 +16,7 @@ import EditPreArrival from '../EditPreArrival/EditPreArrival'
 import EditPost from '../EditPost/EditPost'
 import "./App.css";
 import ItineraryPage from "../ItineraryPage/ItineraryPage";
+import MyTripsPage from "../MyTrips/MyTrips";
 
 
 class App extends Component {
@@ -223,6 +224,15 @@ class App extends Component {
           :
           <Redirect to='/login' />
       }/>
+        <Route
+        exact 
+        path='/my-trips' render={({}) =>
+        authService.getUser() ?
+        <MyTripsPage
+          />
+          :
+          <Redirect to='/' />
+      } />
       </>
     );
   }

@@ -8,8 +8,12 @@ const locationSchema = new Schema ({
 })
 
 const myTripSchema = new Schema ({
-    location: {type: locationSchema},
+    location: {type: [locationSchema]},
+    preArrival: {type: Schema.Types.ObjectId, ref: 'PreArrival'},
+    postArrival: {type: Schema.Types.ObjectId, ref: 'PostArrival'},
     Date: Number
 })
 
-module.exports = mongoose.model('MyTrip', myTripSchema, locationSchema)
+module.exports = mongoose.model('MyTrip', myTripSchema, 'MyLocation', locationSchema)
+// const myTrip = mongoose.model('MyTrip', myTripSchema, 'MyTrip')
+// const myLocation = mongoose.model('MyLocation', locationSchema, 'MyLocation')
