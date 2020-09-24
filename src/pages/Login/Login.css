@@ -6,3 +6,24 @@
   margin-bottom: 50px;
   font-family: 'Delius', cursive;
 }
+
+.card {
+  border-radius: 30px;
+  background-color: rgb(236, 215, 143);
+}
+
+.logIn {
+  background-color: #a97d5d;
+  border-radius: 10px;
+  padding: 4px 20px ;
+  color: white;
+  border: 0;
+}
+
+.signUp {
+  background-color: #5c755e;
+  border-radius: 10px;
+  padding: 4px 20px ;
+  color: white;
+  border: 0;
+}

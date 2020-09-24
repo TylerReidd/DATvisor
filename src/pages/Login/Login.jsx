@@ -34,7 +34,9 @@ class LoginPage extends Component {
     return (
       <main>
          <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
-        <div>
+        <div className="card">
+          <div className="card-body">
+
         <h3>Log In or Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
         <label className="text" htmlFor="email">Email</label>
@@ -46,7 +48,7 @@ class LoginPage extends Component {
             value={email}
             name="email"
             onChange={this.handleChange}
-          />
+            />
           <br/>
           <label className="text" htmlFor="password">Password</label>
           <br/>
@@ -57,18 +59,20 @@ class LoginPage extends Component {
             value={pw}
             name="pw"
             onChange={this.handleChange}
-          />
+            />
           <br/>
-          <button className="btn btn-success">Log In</button>
+          <br></br>
+          <button className="logIn">Log In</button>
           <Link to="/index">
             </Link>
           <br/>
           <br></br>
           <Link to="/signup">
-          <button type="button" className="btn btn-danger" to='/signup'>Sign Up</button>
+          <button type="button" className="signUp" to='/signup'>Sign Up</button>
           </Link>
           
         </form>
+          </div>
         </div>
       </main>
     );
