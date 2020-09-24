@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
           <div>
             <span className="navbar-brand">
              <div className='image-container'>
-               <img src="https://i.imgur.com/bcYXOOF.png" height="150px"/>
+               <img id="datVisor" src="https://i.imgur.com/bcYXOOF.png"/>
              </div>
              <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
               <button 
