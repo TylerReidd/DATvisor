@@ -9,7 +9,7 @@ module.exports = {
 
 function create(req, res) {
     req.body.addedBy = req.user._id
-    req.body.location = req.body.location.split(',')
+    req.body.nameOfTrip = req.body.nameOfTrip.split(',')
     MyTrip.create(req.body)
     .then(myTrip => {res.json(myTrip)})
     .catch(err => {res.json(err)})
@@ -18,6 +18,6 @@ function create(req, res) {
 function index(req, res) {
     MyTrip.find({addedBy: req.user._id})
     .populate('')
-    .then(post => {res.json(post)})
+    .then(myTrip => {res.json(myTrip)})
     .catch(err => {res.json(err)})
 }

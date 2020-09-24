@@ -212,7 +212,7 @@ class App extends Component {
               <Redirect to='/login' />
           } />
         <Route 
-        exact path='/edit' render={({location}) =>
+        exact path='/edit' render={({ location }) =>
         authService.getUser() ?
           <EditPreArrival 
             handleUpdatePreArrival={this.handleUpdatePreArrival}

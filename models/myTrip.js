@@ -11,6 +11,7 @@ const myTripSchema = new Schema ({
     nameOfTrip: [String],
     location: [String],
     departs: [String],
+    addedBy: {type: Schema.Types.ObjectId, ref: 'User'},
     preArrival: {type: Schema.Types.ObjectId, ref: 'PreArrival'},
     postArrival: {type: Schema.Types.ObjectId, ref: 'PostArrival'},
     Date: Number

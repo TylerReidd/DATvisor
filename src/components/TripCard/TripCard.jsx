@@ -7,11 +7,9 @@ function TripCard({ user, myTrip, handleDeleteMyTrip}) {
             <>
                 <div>
                     <div>
-                        <li>{myTrip.location}</li>
+                        <li>{myTrip.nameOfTrip}</li>
                     </div>
                 </div>
-                    
-                    
             </>
             :
             'Not Yours'
