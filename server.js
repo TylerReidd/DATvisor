@@ -31,7 +31,7 @@ app.use('/index', indexRouter);
 app.use('/api/preArrival', preArrivalRouter);
 app.use('/api/postArrival', postArrivalRouter);
 app.use('/api/locationID', locationIDRouter);
-app.use('/api/myTrips', myTripsRouter);
+app.use('/api/myTrip', myTripsRouter);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

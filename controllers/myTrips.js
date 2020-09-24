@@ -16,10 +16,8 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    function index(req,res) {
-        MyTrip.find({addedBy: req.user._id})
-        .populate('')
-        .then(post => {res.json(post)})
-        .catch(err => {res.json(err)})
-    }
+    MyTrip.find({addedBy: req.user._id})
+    .populate('')
+    .then(post => {res.json(post)})
+    .catch(err => {res.json(err)})
 }

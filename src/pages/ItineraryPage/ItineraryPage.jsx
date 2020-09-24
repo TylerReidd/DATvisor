@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react';
 import './ItineraryPage.css'
 import PreCard from '../../components/PreCard/PreCard'
 import { Link } from 'react-router-dom';

@@ -44,7 +44,7 @@ class EditPost extends Component {
                         <Link
                             className="btn btn-danger"
                             to={{
-                                pathname:"/post"
+                                pathname:"/itinerary"
                             }}>
                                Cancel          
                             </Link>

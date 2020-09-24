@@ -35,7 +35,9 @@ class AddTrip extends Component {
     state = { 
         invalidForm: true,
         formData: {
-            location: []
+            nameOfTrip: '',
+            location: [],
+            departs: '',
         }
     }
 

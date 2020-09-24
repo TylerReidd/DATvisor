@@ -8,8 +8,7 @@ import authService from "../../services/authService";
 import Users from "../Users/Users";
 import PreArrivalList from '../../components/PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
-import * as preArrivalAPI from '../../services/pre-api'
-import PostArrivalList from '../../components/PostArrivalList/PostArrivalList'
+import * as PreArrivalAPI from '../../services/pre-api'
 import AddPostList from '../AddPostPage/AddPostPage'
 import * as PostArrivalAPI from '../../services/post-api'
 import EditPreArrival from '../EditPreArrival/EditPreArrival'
@@ -19,6 +18,7 @@ import ItineraryPage from "../ItineraryPage/ItineraryPage";
 import MyTripsPage from "../MyTrips/MyTrips";
 import AddTrip from '../AddTrip/AddTrip';
 import * as MyTripAPI from '../../services/myTrip-api';
+import PostArrivalList from "../../components/PostArrivalList/PostArrivalList";
 
 
 class App extends Component {
@@ -39,7 +39,7 @@ class App extends Component {
   };
 
   handleAddPre = async newPreData => {
-    const newPreArrival = await preArrivalAPI.create(newPreData);
+    const newPreArrival = await PreArrivalAPI.create(newPreData);
     newPreArrival.addedBy = {name: this.state.user.name, _id: this.state.user._id}
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
@@ -63,7 +63,7 @@ class App extends Component {
 
   
   handleUpdatePreArrival = async updatedPreData => {
-    const updatedPreArrival = await preArrivalAPI.update(updatedPreData);
+    const updatedPreArrival = await PreArrivalAPI.update(updatedPreData);
     const newPreArrivalsArray = this.state.preArrivals.map(pre => 
       pre._id === updatedPreArrival._id ? updatedPreArrival : pre
       );
@@ -75,7 +75,7 @@ class App extends Component {
 
   handleDeletePreArrival = async id => {
     if(authService.getUser()){
-      await preArrivalAPI.deleteOne(id);
+      await PreArrivalAPI.deleteOne(id);
       this.setState(state => ({
         preArrivals: state.preArrivals.filter(pre => pre._id !== id)
       }), () => this.props.history.push('/itinerary'));
@@ -107,10 +107,11 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const preArrivals = await preArrivalAPI.getAll();
+    const preArrivals = await PreArrivalAPI.getAll();
     const postArrivals = await PostArrivalAPI.getAll();
+    const myTrips = await MyTripAPI.getAll();
     console.log(preArrivals)
-    this.setState({ preArrivals, postArrivals })
+    this.setState({ preArrivals, postArrivals, myTrips })
   }
 
 
@@ -223,7 +224,7 @@ class App extends Component {
         }/>
         <Route
         exact
-        path='/itinerary' render={({}) =>
+        path='/itinerary' render={() =>
       authService.getUser() ?
         <ItineraryPage
           preArrivals={this.state.preArrivals}
@@ -237,7 +238,7 @@ class App extends Component {
       }/>
         <Route
         exact 
-        path='/my-trips' render={({}) =>
+        path='/my-trips' render={() =>
         authService.getUser() ?
         <MyTripsPage
         />
@@ -246,7 +247,7 @@ class App extends Component {
       } />
       <Route 
       exact
-      path='/add-trip' render={({}) =>
+      path='/add-trip' render={() =>
       authService.getUser() ?
       <AddTrip 
       handleAddTrip={this.handleAddTrip}
