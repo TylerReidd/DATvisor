@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Link} from 'react';
 import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
@@ -12,10 +12,12 @@ const NavBar = ({ user, handleLogout }) => {
                <img id="datVisor" src="https://i.imgur.com/bcYXOOF.png"/>
              </div>
              <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
-              <button 
-              className="btn btn-secondary btn-sm" onClick={handleLogout}>Log Out
-                  </button>
-              
+            <div>
+              <a href='/' onClick={handleLogout}>
+                Log Out
+              </a>
+            </div>
+              <div><a href="/add-trip">Add A Trip</a></div>
             </span>
           </div>
         </nav>
