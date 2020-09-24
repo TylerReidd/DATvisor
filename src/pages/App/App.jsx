@@ -16,6 +16,7 @@ import * as PostArrivalAPI from '../../services/post-api'
 import EditPreArrival from '../EditPreArrival/EditPreArrival'
 import EditPost from '../EditPost/EditPost'
 import "./App.css";
+import ItineraryPage from "../ItineraryPage/ItineraryPage";
 
 
 class App extends Component {
@@ -39,14 +40,14 @@ class App extends Component {
     newPreArrival.addedBy = {name: this.state.user.name, _id: this.state.user._id}
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
-    }), () => this.props.history.push('/preArrival')) 
+    }), () => this.props.history.push('/itinerary')) 
   }
 
   handleAddPost = async newPostData => {
     const newPost = await PostArrivalAPI.create(newPostData);
     this.setState(state => ({
       postArrivals: [...state.postArrivals, newPost]
-    }), () => this.props.history.push('/post')) 
+    }), () => this.props.history.push('/itinerary')) 
   }
 
   
@@ -57,7 +58,7 @@ class App extends Component {
       );
       this.setState(
         {preArrivals: newPreArrivalsArray},
-        () => this.props.history.push('/preArrival')
+        () => this.props.history.push('/itinerary')
         );
       }
 
@@ -66,7 +67,7 @@ class App extends Component {
       await preArrivalAPI.deleteOne(id);
       this.setState(state => ({
         preArrivals: state.preArrivals.filter(pre => pre._id !== id)
-      }), () => this.props.history.push('/preArrival'));
+      }), () => this.props.history.push('/itinerary'));
     } else {
       this.props.history.push('/login')
     }
@@ -79,7 +80,7 @@ class App extends Component {
     );
     this.setState(
       { postArrivals: newPostArray },
-      () => this.props.history.push('/post')
+      () => this.props.history.push('/itinerary')
     );
   }
 
@@ -88,7 +89,7 @@ class App extends Component {
       await PostArrivalAPI.deleteOne(id);
       this.setState(state => ({
         postArrivals: state.postArrivals.filter(a => a._id !== id)
-      }), () => this.props.history.push('/post'))
+      }), () => this.props.history.push('/itinerary'))
     } else {
       this.props.history.push('/login')
     }
@@ -177,7 +178,7 @@ class App extends Component {
                 <Redirect to='/login' />
           } />
 
-          <Route 
+          {/* <Route 
               exact
               path="/post"
               render={() => 
@@ -186,7 +187,7 @@ class App extends Component {
                 user={this.state.user}
         handleDeletePostArrival={this.handleDeletePostArrival}
                 /> 
-              } />
+              } /> */}
 
         <Route
             exact
@@ -199,7 +200,6 @@ class App extends Component {
               :
               <Redirect to="/login" />
         }/>
-        
          <Route
           exact path='/editPost' render={({ location }) =>
             authService.getUser() ?
@@ -211,7 +211,6 @@ class App extends Component {
               :
               <Redirect to='/login' />
           } />
-
         <Route 
         exact path='/edit' render={({location}) =>
         authService.getUser() ?
@@ -223,6 +222,20 @@ class App extends Component {
           :
           <Redirect to='/login' />
         }/>
+        <Route
+        exact
+        path='/itinerary' render={({}) =>
+      authService.getUser() ?
+        <ItineraryPage
+          preArrivals={this.state.preArrivals}
+          postArrivals={this.state.postArrivals}
+          user={this.state.user}
+          handleDeletePreArrival={this.handleDeletePreArrival}
+          handleDeletePostArrival={this.handleDeletePostArrival}
+          />
+          :
+          <Redirect to='/login' />
+      }/>
       </>
     );
   }

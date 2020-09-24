@@ -46,7 +46,7 @@ render() {
                     <Link 
                         className="btn btn-danger"
                         to={{
-                            pathname: '/preArrival'
+                            pathname: '/itinerary'
                         }}
                     >
                     Cancel
