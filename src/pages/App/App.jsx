@@ -115,7 +115,6 @@ class App extends Component {
           path="/"
           render={({history}) => (
             <main>
-              <Landing />
               <Login
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}

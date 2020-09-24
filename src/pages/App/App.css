@@ -1,6 +1,6 @@
 body {
-  background-image: url('Cloud-20s-1084px.gif');
-  background-position: center;
+  background-image: linear-gradient(to right top, #0ea9e1, #00b3e2, #00bce0, #00c5dd, #00cdd8, #00cfd7, #00d0d5, #00d2d4, #00ced8, #00cadc, #00c6df, #00c2e1);
+  background-attachment: fixed;
 }
 
 
