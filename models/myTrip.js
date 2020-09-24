@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const locationSchema = new Schema ({
-    name: String,
-    id: String,
-    description: String 
+    nameOfTrip: String,
+    location: String,
+    departs: Date,
 })
 
 const myTripSchema = new Schema ({

@@ -17,12 +17,15 @@ import EditPost from '../EditPost/EditPost'
 import "./App.css";
 import ItineraryPage from "../ItineraryPage/ItineraryPage";
 import MyTripsPage from "../MyTrips/MyTrips";
+import AddTrip from '../AddTrip/AddTrip';
+import * as MyTripAPI from '../../services/myTrip-api';
 
 
 class App extends Component {
   state = {
     preArrivals: [],
     postArrivals: [],
+    myTrips: [],
     user: authService.getUser(),
   };
 
@@ -41,6 +44,14 @@ class App extends Component {
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
     }), () => this.props.history.push('/itinerary')) 
+  }
+
+  handleAddTrip = async newTripData => {
+    const newTrip = await MyTripAPI.create(newTripData);
+    newTrip.addedBy = {name: this.state.user.name, _id: this.state.user._id}
+    this.setState(state => ({
+      myTrips: [...state.myTrips, newTrip]
+    }), () => this.props.history.push('/my-trips')) 
   }
 
   handleAddPost = async newPostData => {
@@ -229,10 +240,20 @@ class App extends Component {
         path='/my-trips' render={({}) =>
         authService.getUser() ?
         <MyTripsPage
-          />
-          :
-          <Redirect to='/' />
+        />
+        :
+        <Redirect to='/' />
       } />
+      <Route 
+      exact
+      path='/add-trip' render={({}) =>
+      authService.getUser() ?
+      <AddTrip 
+      handleAddTrip={this.handleAddTrip}
+      />
+      :
+    <Redirect to='/' />
+  } />
       </>
     );
   }

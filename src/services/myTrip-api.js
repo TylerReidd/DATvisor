@@ -1,22 +1,22 @@
-// import tokenService from './tokenService';
-// const BASE_URL = '/api/myTrip/';
+import tokenService from './tokenService';
+const BASE_URL = '/api/myTrip/';
 
-// export function create(myTrip) {
-//     return fetch(BASE_URL, {
-//         method: "POST",
-//         headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
-//         body: JSON.stringify(myTrip)
-//     }, { mode: "cors" })
-//     .then(res => res.json());
-// }
+export function create(myTrip) {
+    return fetch(BASE_URL, {
+        method: "POST",
+        headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+        body: JSON.stringify(myTrip)
+    }, { mode: "cors" })
+    .then(res => res.json());
+}
 
-// export function getAll() {
-//   return fetch(BASE_URL, {
-//       method: "GET",
-//       headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
-//   }, { mode: "cors" })
-//   .then(res => res.json());
-// }
+export function getAll() {
+  return fetch(BASE_URL, {
+      method: "GET",
+      headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+  }, { mode: "cors" })
+  .then(res => res.json());
+}
 
 // export function deleteOne(id) {
 //     return fetch(`${BASE_URL}${id}`, {

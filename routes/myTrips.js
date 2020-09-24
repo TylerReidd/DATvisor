@@ -6,6 +6,7 @@ const myTripsCtrl = require('../controllers/myTrips')
 // protected routes
 router.use(require('../config/auth'));
 router.get('/', checkAuth, myTripsCtrl.index)
+router.post('/', checkAuth, myTripsCtrl.create)
 
 
 function checkAuth(req, res, next) {
