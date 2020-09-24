@@ -8,7 +8,9 @@ const locationSchema = new Schema ({
 })
 
 const myTripSchema = new Schema ({
-    location: {type: [locationSchema]},
+    nameofTrip: [String],
+    location: [String],
+    departs: [String],
     preArrival: {type: Schema.Types.ObjectId, ref: 'PreArrival'},
     postArrival: {type: Schema.Types.ObjectId, ref: 'PostArrival'},
     Date: Number
