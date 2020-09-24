@@ -8,10 +8,10 @@ const NavBar = ({ user, handleLogout }) => {
         <nav className="navbar-nav">
           <div>
             <span className="navbar-brand">
-             <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
              <div className='image-container'>
                <img src="https://i.imgur.com/bcYXOOF.png" height="150px"/>
              </div>
+             <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
               <button 
               className="btn btn-secondary btn-sm" onClick={handleLogout}>Log Out
                   </button>
@@ -23,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
         <nav>
           <div className="nav-wrapper">
             <span  className="navbar-brand">
-              <div><a href="/login" className="d-flex justify-content-around">Log In</a></div>
+              <div className=""><a href="/login" >Log In</a></div>
               
               <div><a href="/signup" className="nav-link">Sign Up</a></div>
             </span>
