@@ -26,17 +26,17 @@ const MyTripsPage = (props) => {
                 )}
         </div>
         </div>
-        {/* <table>
+        <table>
             <thead>
                 <tr>
-                    <th>Trip Name</th>
+            <th>{}</th>
                     <th>Location</th>
                     <th>Departure</th>
                     <th>Itineraries</th>
                 </tr>
             </thead>
             
-        </table> */}
+        </table>
 
         </>
      );
