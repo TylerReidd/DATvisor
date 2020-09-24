@@ -178,17 +178,6 @@ class App extends Component {
                 <Redirect to='/login' />
           } />
 
-          {/* <Route 
-              exact
-              path="/post"
-              render={() => 
-                <PostArrivalList 
-                postArrivals={this.state.postArrivals}
-                user={this.state.user}
-        handleDeletePostArrival={this.handleDeletePostArrival}
-                /> 
-              } /> */}
-
         <Route
             exact
             path="/postToDo"

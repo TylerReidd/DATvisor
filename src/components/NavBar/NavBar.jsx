@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
             <span className="navbar-brand">
              <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
              <div className='image-container'>
-               <img src="https://i.imgur.com/bcYXOOF.png" height="100px"/>
+               <img src="https://i.imgur.com/bcYXOOF.png" height="150px"/>
              </div>
               <button 
               className="btn btn-secondary btn-sm" onClick={handleLogout}>Log Out

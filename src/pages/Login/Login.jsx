@@ -65,7 +65,7 @@ class LoginPage extends Component {
           <br/>
           <br></br>
           <Link to="/signup">
-          <button type="button" class="btn btn-danger" to='/signup'>Sign Up</button>
+          <button type="button" className="btn btn-danger" to='/signup'>Sign Up</button>
           </Link>
           
         </form>
