@@ -1,26 +1,32 @@
 import React from 'react';
+import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
     return (
     <>
       {user ?
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
-            </ul>
+        <nav className="navbar-nav">
+          <div>
+            <span className="navbar-brand">
+             <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
+             <div className='image-container'>
+               <img src="https://i.imgur.com/bcYXOOF.png" height="100px"/>
+             </div>
+              <button 
+              className="btn btn-secondary btn-sm" onClick={handleLogout}>Log Out
+                  </button>
+              
+            </span>
           </div>
         </nav>
       :
         <nav>
           <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
+            <span  className="navbar-brand">
+              <div><a href="/login" className="d-flex justify-content-around">Log In</a></div>
+              
+              <div><a href="/signup" className="nav-link">Sign Up</a></div>
+            </span>
           </div>
         </nav>
       }
