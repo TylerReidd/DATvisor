@@ -25,15 +25,6 @@ const MyTripsPage = (props) => {
                 />
                 )}
         </div>
-        <Link
-        to={{
-            pathname: '/add-trip',
-            state: {
-                myTrips: []
-            }
-        }}>
-        <button type="button" className="btn btn-success">Add Task</button>
-        </Link>
         </div>
         {/* <table>
             <thead>
