@@ -1,4 +1,4 @@
-const PostArrival = require("../models/postPage");
+const PostArrival = require("../models/postArrival");
 
 module.exports = {
     index,

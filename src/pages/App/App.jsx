@@ -3,7 +3,6 @@ import { Route, Redirect } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
-import Landing from '../Landing/Landing'
 import Index from '../IndexPage/IndexPage'
 import authService from "../../services/authService";
 import Users from "../Users/Users";

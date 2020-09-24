@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const postCtrl = require('../controllers/post')
+const postArrivalCtrl = require('../controllers/postArrival')
 
 
 //public routes
@@ -8,10 +8,10 @@ const postCtrl = require('../controllers/post')
 
 //protected routes
 router.use(require('../config/auth'));
-router.get('/', checkAuth, postCtrl.index)
-router.post('/', checkAuth, postCtrl.create)
-router.put('/:id', checkAuth, postCtrl.update)
-router.delete('/:id', checkAuth, postCtrl.delete)
+router.get('/', checkAuth, postArrivalCtrl.index)
+router.post('/', checkAuth, postArrivalCtrl.create)
+router.put('/:id', checkAuth, postArrivalCtrl.update)
+router.delete('/:id', checkAuth, postArrivalCtrl.delete)
 
 
 function checkAuth(req, res, next) {

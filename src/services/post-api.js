@@ -1,5 +1,5 @@
 import tokenService from '../services/tokenService';
-const BASE_URL = '/api/post/';
+const BASE_URL = '/api/postArrival/';
 
 export function getAll() {
     return fetch(BASE_URL, {
