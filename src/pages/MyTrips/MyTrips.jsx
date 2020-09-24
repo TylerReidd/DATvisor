@@ -7,16 +7,7 @@ const MyTripsPage = (props) => {
     return ( 
         <>
         <h1>My Trips</h1>
-        <Link to=
-        {{pathname: "/add-trip",
-        state: {
-            myTrips: [],
-        }
-            }}> <button>Add A Trip</button> </Link>
-
-            <div className='container'>
-                <div>
-            {props.myTrips.map(myTrip =>
+                {props.myTrips.map(myTrip =>
                 <TripCard
                 key={myTrip._id}
                 myTrip={myTrip}
@@ -24,21 +15,7 @@ const MyTripsPage = (props) => {
                 user={props.user}
                 />
                 )}
-        </div>
-        </div>
-        {/* <table>
-            <thead>
-                <tr>
-                    <th>Trip Name</th>
-                    <th>Location</th>
-                    <th>Departure</th>
-                    <th>Itineraries</th>
-                </tr>
-            </thead>
-            
-        </table> */}
-
-        </>
+                </>
      );
 }
  
