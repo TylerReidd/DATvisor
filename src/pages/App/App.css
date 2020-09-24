@@ -1,3 +1,9 @@
+body {
+  background-image: url('Cloud-20s-1084px.gif');
+  background-position: center;
+}
+
+
 main {
   text-align: center;
   font-family: 'Delius', cursive;
