@@ -35,16 +35,17 @@ const IndexPage = () => {
             <>
              <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
              <br></br>
-             <div className="card">
+                <h1>Need Vacation Ideas?</h1>
+                <div className="card">
 
-            <b> Need Ideas? </b><br />
             <b>Search the city!</b><br />
-            <input type="text" id="location" name="location" value={searchValue} onChange={event => setSearchValue(event.currentTarget.value)}/><br /><br />
-            <button className="welButt" type="submit" onClick={()=> apiCall()}> ENTER </button>
+            <input className='IdeaInput'type="text" id="location" name="location" value={searchValue} onChange={event => setSearchValue(event.currentTarget.value)}/><br /><br />
+            <button className="IdeaEnter" type="submit" onClick={()=> apiCall()}> ENTER </button>
             <br />
             <>
             {data.map(attraction =>
-            <span key={attraction.location_id}>
+            <span className='attractions'
+                key={attraction.location_id}>
                 <a title={attraction.description}
                 target='_blank'
                 rel="noopener noreferrer"
