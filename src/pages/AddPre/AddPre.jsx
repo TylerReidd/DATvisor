@@ -28,7 +28,7 @@ class AddPre extends Component {
         return ( 
             <>
                 <h1>Tasks to complete prior to Trip</h1>
-                <div className="AddPre" id="addPre">
+                <div className="card" id="addPre">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="input-field col s12">
@@ -38,7 +38,7 @@ class AddPre extends Component {
                         </div>
                         <button
                             type="submit"
-                            className="btn btn-danger"
+                            className="preButt"
                                     >
                             Add Pre-Arrival Itinerary
                         </button>                           
