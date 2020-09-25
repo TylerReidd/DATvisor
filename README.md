@@ -69,7 +69,7 @@
 
 ## As a user, signed in, 
 
-###Navbar
+### Navbar
 - See logo on left side
 - My Name being welcomed
 - 'Your Trips' Link to a trip list
