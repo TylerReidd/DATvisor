@@ -13,7 +13,8 @@ function create(req, res) {
     req.body.addedBy = req.user._id
     req.body.nameOfTrip = req.body.nameOfTrip.split(',')
     MyTrip.create(req.body)
-    .then(myTrip => {res.json(myTrip)})
+    PreArrival.create(req.body)
+    .then((myTrip, preArrival) => {res.json(myTrip, preArrival)})
     .catch(err => {res.json(err)})
 }
 

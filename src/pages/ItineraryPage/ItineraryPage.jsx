@@ -10,9 +10,9 @@ const ItineraryPage = (props) => {
         <h1>Pre-Arrival Itinerary</h1>
         <div className='container'>
         <div>
-            {props.preArrivals.map(preArrival =>
+            {props.preArrivals.map((preArrival, myTrip) =>
                 <PreCard
-                key={preArrival._id}
+                key={myTrip._id}
                 preArrival={preArrival}
                 handleDeletePreArrival={props.handleDeletePreArrival}
                 user={props.user}

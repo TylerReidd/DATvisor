@@ -5,7 +5,10 @@ const MyTripsPage = (props) => {
     return ( 
         <>
         <h1>My Trips</h1>
-                {props.myTrips.map(myTrip =>
+        <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
+        <div className="card">
+          <div className="card-body">
+                {props.myTrips.map((myTrip) =>
                 <TripCard
                 key={myTrip._id}
                 myTrip={myTrip}
@@ -13,6 +16,8 @@ const MyTripsPage = (props) => {
                 user={props.user}
                 />
                 )}
+                </div>
+                </div>
                 </>
      );
 }
