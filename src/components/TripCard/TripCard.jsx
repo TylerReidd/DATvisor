@@ -6,16 +6,14 @@ function TripCard({ user, myTrip, handleDeleteMyTrip}) {
         <>
         {user._id ? 
             <>
-                <div>
-                    <div>
-                        <li>{myTrip.nameOfTrip}</li>
-                    </div>
-                </div>
+                 <div className="card">
+                    <div className="card-body">
+                        <h3>{myTrip.nameOfTrip}</h3>
                 <Link 
                 to={{
                     pathname: '/itinerary',
                     state: {myTrip}
-                }}> <button type="submit" className="btn btn-warning btn-sm">Details</button>
+                }}> <button type="submit" className="tripButt">Details</button>
                 </Link>
                 <Link 
                     className="btn yellow black-text"
@@ -23,11 +21,13 @@ function TripCard({ user, myTrip, handleDeleteMyTrip}) {
                         pathname: '/edit-trip',
                         state: {myTrip}
                     }}>
-                    <button type="submit" className="btn btn-warning btn-sm">Edit</button>
+                    <button type="submit" className="tripButt">Edit</button>
                     </Link>
-                    <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeleteMyTrip(myTrip._id)}>
+                    <button type="submit" className="tripButt" onClick={() => handleDeleteMyTrip(myTrip._id)}>
                             Delete 
                         </button>
+                    </div>
+                </div>
             </>
             :
             'Not Yours'
