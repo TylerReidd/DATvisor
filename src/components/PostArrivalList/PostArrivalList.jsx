@@ -27,7 +27,7 @@ const PostArrivalList = (props) => {
             }
         }}>
             <br/>
-        <button type="button" className="btn btn-success btn-med">ADD Activity</button>
+        <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>  
         </>

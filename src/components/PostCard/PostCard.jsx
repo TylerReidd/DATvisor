@@ -7,9 +7,10 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
         <>
         {user._id ?   
         <>
+        
         <div>
             <div>
-                <li>{postArrival.toDo}</li>            
+                <h3>{postArrival.toDo}</h3>         
             </div>
         </div>
        
@@ -19,10 +20,10 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
             pathname: '/editPost',
             state: {postArrival}
         }}>
-        <button type="submit" className="btn btn-warning btn-sm">Edit Activity</button>
+        <button type="submit" className="iButt">Edit</button>
         </Link>
         
-        <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeletePostArrival(postArrival._id)}>
+        <button type="submit" className="iButt" onClick={() => handleDeletePostArrival(postArrival._id)}>
             Delete 
         </button>
         </>

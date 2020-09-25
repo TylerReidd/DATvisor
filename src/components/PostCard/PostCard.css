@@ -1,5 +1,6 @@
-li {
-    font-family: 'Delius', cursive;
-    font-size: xx-large;
-    ;
+.iButt{
+    border-radius: 10px;
+    border: none;
+    background-color: #5c755e;
+
 }

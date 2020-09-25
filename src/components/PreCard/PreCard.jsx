@@ -39,7 +39,7 @@ function PreCard({ user, preArrival, handleDeletePreArrival}) {
             <>
                 <div>
                     <div>
-                        {preArrival.toDo}
+                        <h3>{preArrival.toDo}</h3>
                     </div>
                 </div>
                     <Link 
@@ -48,9 +48,9 @@ function PreCard({ user, preArrival, handleDeletePreArrival}) {
                         pathname: '/edit',
                         state: {preArrival}
                     }}>
-                    <button type="submit" className="btn btn-warning btn-sm">Edit</button>
+                    <button type="submit" className="iButt">Edit</button>
                     </Link>
-                        <button type="submit" className="btn btn-danger btn-sm" onClick={() => handleDeletePreArrival(preArrival._id)}>
+                        <button type="submit" className="iButt" onClick={() => handleDeletePreArrival(preArrival._id)}>
                             Delete 
                         </button>
             </>

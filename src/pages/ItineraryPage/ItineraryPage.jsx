@@ -7,9 +7,15 @@ import PostCard from '../../components/PostCard/PostCard'
 const ItineraryPage = (props) => {
     return(
         <> 
+        <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
+        <div className="card">
+            <div className="card-body">
+
         <h1>Pre-Arrival Itinerary</h1>
         <div className='container'>
         <div>
+            </div>
+            </div>
             {props.preArrivals.map((preArrival, myTrip) =>
                 <PreCard
                 key={myTrip._id}
@@ -26,7 +32,7 @@ const ItineraryPage = (props) => {
                 preArrivals: []
             }
         }}>
-        <button type="button" className="btn btn-success">Add Task</button>
+        <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>
 
@@ -50,8 +56,7 @@ const ItineraryPage = (props) => {
                 postArrivals: []
             }
         }}>
-            <br/>
-        <button type="button" className="btn btn-success btn-med">ADD Activity</button>
+        <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>  
         </>
