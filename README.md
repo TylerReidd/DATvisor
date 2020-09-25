@@ -11,7 +11,7 @@
 ##
 ##
 ## Motivation:
-### We love to travel around the world and making a ton of things that need to be done on multiple sheets of paper or folder of notes on our phones can be overwhelming and not very efficient. We decided to make an all-in-one app that allows you to keep yourself organized and maybe even give you some ideas on your vacation!##
+### We love to travel around the world and making a ton of things that need to be done on multiple sheets of paper or folder of notes on our phones can be overwhelming and not very efficient. We decided to make an all-in-one app that allows you to keep yourself organized and maybe even give you some ideas on your vacation!
 ##
 ##
 ## [Go to Trello Board](https://trello.com/b/ViYZsTjA/dat-travel)
