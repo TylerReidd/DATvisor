@@ -72,6 +72,8 @@ class App extends Component {
         );
       }
 
+      // handleMyTripItinerary = async 
+
   
   handleUpdatePreArrival = async updatedPreData => {
     const updatedPreArrival = await PreArrivalAPI.update(updatedPreData);
