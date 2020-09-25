@@ -2,7 +2,6 @@ import React from 'react';
 import './MyTrips.css'
 import { Link } from 'react-router-dom'
 import TripCard from '../../components/TripCard/TripCard'
-
 const MyTripsPage = (props) => {
     return ( 
         <>
@@ -15,23 +14,7 @@ const MyTripsPage = (props) => {
                 user={props.user}
                 />
                 )}
-        </div>
-        </div>
-        <table>
-            <thead>
-                <tr>
-            <th>{}</th>
-                    <th>Location</th>
-                    <th>Departure</th>
-                    <th>Itineraries</th>
-                </tr>
-            </thead>
-            
-        </table>
-
-        </>
                 </>
      );
 }
- 
 export default MyTripsPage;

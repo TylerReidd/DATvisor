@@ -16,7 +16,6 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    console.log(req.user._id)
     PreArrival.find({addedBy: req.user._id})
     .populate('addedBy')
     .then((pre) => res.json(pre))

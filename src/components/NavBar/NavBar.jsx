@@ -12,12 +12,13 @@ const NavBar = ({ user, handleLogout }) => {
                <img id="datVisor" src="https://i.imgur.com/bcYXOOF.png"/>
              </div>
              <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
+              <div><a href="/add-trip">Add A Trip</a></div>
+              <div><a href="/index">Vacation Ideas</a></div>
             <div>
               <a href='/' onClick={handleLogout}>
                 Log Out
               </a>
             </div>
-              <div><a href="/add-trip">Add A Trip</a></div>
             </span>
           </div>
         </nav>

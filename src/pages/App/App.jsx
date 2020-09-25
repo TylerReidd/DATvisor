@@ -155,11 +155,6 @@ class App extends Component {
             />
           )}
         />
-        <Route
-          exact
-          path="/users"
-          render={() => (user ? <Users /> : <Redirect to="/login" />)}
-        />
 
         <Route 
           exact
@@ -186,7 +181,7 @@ class App extends Component {
                 handleAddPre={this.handleAddPre}
                 />
                 :
-                <Redirect to='/login' />
+                <Redirect to='/' />
           } />
 
         <Route
@@ -198,7 +193,7 @@ class App extends Component {
               handleAddPost={this.handleAddPost}
               />
               :
-              <Redirect to="/login" />
+              <Redirect to="/" />
         }/>
          <Route
           exact path='/editPost' render={({ location }) =>
@@ -209,7 +204,7 @@ class App extends Component {
                 user={this.state.user}
               />
               :
-              <Redirect to='/login' />
+              <Redirect to='/' />
           } />
         <Route 
         exact path='/edit' render={({ location }) =>
@@ -220,7 +215,7 @@ class App extends Component {
             user={this.state.user}
           />
           :
-          <Redirect to='/login' />
+          <Redirect to='/' />
         }/>
         <Route
         exact
@@ -234,7 +229,7 @@ class App extends Component {
           handleDeletePostArrival={this.handleDeletePostArrival}
           />
           :
-          <Redirect to='/login' />
+          <Redirect to='/' />
       }/>
         <Route
         exact 
