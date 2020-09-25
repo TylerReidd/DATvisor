@@ -5,7 +5,6 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Index from '../IndexPage/IndexPage'
 import authService from "../../services/authService";
-import Users from "../Users/Users";
 import PreArrivalList from '../../components/PreArrivalList/PreArrivalList';
 import AddPre from '../AddPre/AddPre'
 import * as PreArrivalAPI from '../../services/pre-api'
@@ -18,6 +17,7 @@ import ItineraryPage from "../ItineraryPage/ItineraryPage";
 import MyTripsPage from "../MyTrips/MyTrips";
 import AddTrip from '../AddTrip/AddTrip';
 import * as MyTripAPI from '../../services/myTrip-api';
+import EditMyTrip from '../EditMyTrip/EditMyTrip'
 
 
 
@@ -61,6 +61,17 @@ class App extends Component {
     }), () => this.props.history.push('/itinerary')) 
   }
 
+  handleUpdateMyTrip = async updatedTripData => {
+    const updatedTrip = await MyTripAPI.update(updatedTripData);
+    const newTripArray = this.state.myTrips.map(trip => 
+      trip._id === updatedTrip._id ? updatedTrip : trip
+      );
+      this.setState(
+        {myTrips: newTripArray},
+        () => this.props.history.push('/my-trips')
+        );
+      }
+
   
   handleUpdatePreArrival = async updatedPreData => {
     const updatedPreArrival = await PreArrivalAPI.update(updatedPreData);
@@ -81,6 +92,17 @@ class App extends Component {
       }), () => this.props.history.push('/itinerary'));
     } else {
       this.props.history.push('/login')
+    }
+  }
+
+  handleDeleteMyTrip = async id => {
+    if(authService.getUser()){
+      await MyTripAPI.deleteOne(id);
+      this.setState(state => ({
+        myTrips: state.myTrips.filter(trip => trip._id !== id)
+      }), () => this.props.history.push('/my-trips'));
+    } else {
+      this.props.history.push('/')
     }
   }
 
@@ -238,6 +260,7 @@ class App extends Component {
         <MyTripsPage
         myTrips={this.state.myTrips}
         user={this.state.user}
+        handleDeleteMyTrip={this.handleDeleteMyTrip}
         />
         :
         <Redirect to='/' />
@@ -252,6 +275,18 @@ class App extends Component {
       :
     <Redirect to='/' />
   } />
+    <Route 
+    exact
+    path='/edit-trip' render={({ location }) =>
+    authService.getUser() ?
+      <EditMyTrip
+        handleUpdateMyTrip={this.handleUpdateMyTrip}
+        location={location}
+        user={this.state.user}
+      />
+      :
+      <Redirect to='/' />
+    }/>
       </>
     );
   }

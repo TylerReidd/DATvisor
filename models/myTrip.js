@@ -8,9 +8,9 @@ const Schema = mongoose.Schema
 // })
 
 const myTripSchema = new Schema ({
-    nameOfTrip: [String],
-    location: [String],
-    departs: [String],
+    nameOfTrip: {type: []},
+    location: {type: []},
+    departs: {type: []},
     addedBy: {type: Schema.Types.ObjectId, ref: 'User'},
     preArrival: {type: Schema.Types.ObjectId, ref: 'PreArrival'},
     postArrival: {type: Schema.Types.ObjectId, ref: 'PostArrival'},

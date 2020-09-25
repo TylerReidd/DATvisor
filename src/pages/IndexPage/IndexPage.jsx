@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import './IndexPage.css';
 const baseUrl = "/api/locationID";
 
 
@@ -31,11 +33,14 @@ const IndexPage = () => {
         console.log(data)
         return (
             <>
-            <h1>DATvisor</h1>
+             <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
+             <br></br>
+             <div className="card">
+
             <b> Need Ideas? </b><br />
             <b>Search the city!</b><br />
             <input type="text" id="location" name="location" value={searchValue} onChange={event => setSearchValue(event.currentTarget.value)}/><br /><br />
-            <button className="btn btn-primary" type="submit" onClick={()=> apiCall()}> ENTER </button>
+            <button className="welButt" type="submit" onClick={()=> apiCall()}> ENTER </button>
             <br />
             <>
             {data.map(attraction =>
@@ -47,7 +52,7 @@ const IndexPage = () => {
                 <br /><br />
                 </span>)}
             </>
-            <button>Itineraries</button>
+                </div>
             </>
          );
 }

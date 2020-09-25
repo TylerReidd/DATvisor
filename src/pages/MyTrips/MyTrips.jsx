@@ -1,6 +1,5 @@
 import React from 'react';
 import './MyTrips.css'
-import { Link } from 'react-router-dom'
 import TripCard from '../../components/TripCard/TripCard'
 const MyTripsPage = (props) => {
     return ( 

@@ -4,7 +4,9 @@ const PostArrival = require('../models/postArrival')
 
 module.exports = {
     index,
-    create
+    create,
+    delete: deleteOne,
+    update
 }
 
 function create(req, res) {
@@ -17,7 +19,20 @@ function create(req, res) {
 
 function index(req, res) {
     MyTrip.find({addedBy: req.user._id})
-    .populate('')
+    .populate('addedBy')
     .then(myTrip => {res.json(myTrip)})
     .catch(err => {res.json(err)})
 }
+
+function deleteOne(req, res) {
+    MyTrip.findByIdAndDelete(req.params.id)
+    .then(myTrip => {res.json(myTrip)})
+    .catch(err => {res.json(err)})
+  }
+
+function update(req, res) {
+    MyTrip.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .populate('addedBy')
+    .then(myTrip => {res.json(myTrip)})
+    .catch(err => {res.json(err)})
+  }

@@ -7,7 +7,8 @@ const myTripsCtrl = require('../controllers/myTrips')
 router.use(require('../config/auth'));
 router.get('/', checkAuth, myTripsCtrl.index)
 router.post('/', checkAuth, myTripsCtrl.create)
-
+router.delete('/:id', checkAuth, myTripsCtrl.delete);
+router.put('/:id', checkAuth, myTripsCtrl.update);
 
 function checkAuth(req, res, next) {
     if (req.user) return next();
