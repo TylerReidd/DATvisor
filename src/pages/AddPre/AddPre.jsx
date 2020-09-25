@@ -27,23 +27,26 @@ class AddPre extends Component {
     render() { 
         return ( 
             <>
-                <h1>Tasks to complete prior to Trip</h1>
-                <div className="AddPre" id="addPre">
+                <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
+                <h1>Add a Pre Arrival Task</h1>
+                <div className="card">
+                <div className="card-body">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="input-field col s12">
-                            <label htmlFor="toDo">Task(s)</label>
+                            <label htmlFor="toDo">Task:</label>
                             <input name="toDo" id="toDo" type="text" className="active" value={this.state.formData.toDo} onChange={this.handleChange} />
                             </div>
                         </div>
                         <button
                             type="submit"
-                            className="btn btn-danger"
+                            className="PreAddBtn"
                                     >
-                            Add Pre-Arrival Itinerary
+                            Add to Itinerary
                         </button>                           
                     </form>
-                </div>
+                    </div>
+                    </div>
             </>
          );
     }

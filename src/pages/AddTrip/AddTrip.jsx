@@ -60,8 +60,10 @@ class AddTrip extends Component {
     render() { 
         return ( 
             <>
+                <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
                 <h1>Add A Trip</h1>
-                <div className="AddTrip" id="addTip">
+                <div className="card">
+                <div className="card-body">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="input-field col s12">
@@ -73,14 +75,16 @@ class AddTrip extends Component {
                             <input name="departs" id="departs" type="date" className="active" value={this.state.formData.departs} onChange={this.handleChange} />
                             </div>
                         </div>
+                        <br/>
                         <button
                             type="submit"
-                            className="btn btn-danger"
+                            className="CreateTrip"
                                     >
                             Create Trip
                         </button>                           
                     </form>
-                </div>
+                    </div>
+                    </div>
             </>
          );
     }
