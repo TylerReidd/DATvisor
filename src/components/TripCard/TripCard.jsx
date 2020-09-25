@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './TripCard.css'
+
 
 function TripCard({ user, myTrip, handleDeleteMyTrip}) {
     return (
