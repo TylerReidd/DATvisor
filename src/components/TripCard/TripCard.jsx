@@ -12,6 +12,12 @@ function TripCard({ user, myTrip, handleDeleteMyTrip}) {
                     </div>
                 </div>
                 <Link 
+                to={{
+                    pathname: '/itinerary',
+                    state: {myTrip}
+                }}> <button type="submit" className="btn btn-warning btn-sm">Details</button>
+                </Link>
+                <Link 
                     className="btn yellow black-text"
                     to={{
                         pathname: '/edit-trip',
